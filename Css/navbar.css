@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Fruktur:ital@0;1&family=Noto+Nastaliq+Urdu&family=Playpen+Sans&display=swap');
+
+:root {
+  --primer: #EDF2FC; /* mode terang - putih */
+  --sekunder: #000; /* mode terang - hitam */
+  --trp: rgba(0, 1, 6, 0.1);
+  --bantal: orange;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media Query untuk mode gelap */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primer: #000106;
+    --trp: rgba(237, 242, 252, 0.1);
+    --sekunder: #fff;
+    --bantal: #F55D3E;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playpen Sans','Fruktur', Sans-Serif, Arial,cursive;
+  scroll-behavior: smooth;
+  transition: all 0.6s ease;
+}
+
+body {
+  background: var(--primer);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  transition: 0.6s ease;
+  padding: 50px 30px;
+  border-bottom: 1px solid #0000;
+  z-index: 100;
+}
+
+nav .logo,
+nav ul,
+nav ul li,
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  list-style: none;
+  color: var(--primer);
+  transition: 0.6s;
+
+}
+
+/* nama */
+nav .logo {
+  font-weight: 700;
+  font-size: 140%;
+}
+
+nav .logo:before {
+  content: attr(title);
+  color: var(--bantal);
+}
+
+/* mengatur text list*/
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li a {
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin: 0 15px;
+  border-bottom: 1px solid #0000;
+}
+
+nav ul li a:hover,
+nav.geser ul li a.aktif {
+  border-bottom: 1px solid var(--bantal);
+  color: var(--bantal);
+}
+
+/* mengatur garis */
+nav #garis i {
+  font-size: 2rem;
+  color: var(--primer);
+  transition: 0.6s;
+  display: none;
+}
+
+/* responsif scroll */
+nav.geser .logo,
+nav.geser ul li a,
+nav.geser #garis i {
+  color: var(--sekunder);
+}
+
+nav.geser {
+  padding: 10px 30px;
+  background: var(--primer);
+  border-bottom: 2px solid var(--bantal);
+}
+footer {
+  border-top: 2px solid var(--sekunder);
+    background: var(--trp);
+    text-align: center;
+    padding: 20px 0;
+    bottom: 0;
+    color: var(--sekunder);
+    width: 100%;
+    margin-top: 70px;
+}
+
+/* aktif jika layar dibawah 768px */
+@media (max-width:768px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav #garis i {
+    display: inline;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    row-gap: 14px;
+  }
+
+  nav ul.hilang {
+    display: none;
+  }
+}
