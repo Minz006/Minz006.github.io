@@ -2,7 +2,7 @@
     .cover-photo {
       width: 100%;
       height: 200px;
-      background: url('/gambar/sampul.jpg') no-repeat center center;
+      background: url('/Img/sampul.jpg') no-repeat center center;
       background-size: cover;
     }
 
