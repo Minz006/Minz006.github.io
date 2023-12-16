@@ -69,7 +69,7 @@ document.getElementById('TGL').valueAsDate = new Date();
 //animasi skroll
 var atribut = document.querySelectorAll('div');
 atribut.forEach((kelas) => {
-  kelas.setAttribute('class', 'content');
+  kelas.classList.add('content');
 });
 document.addEventListener('DOMContentLoaded', () => {
   let pengamat = new IntersectionObserver((entri) => {
