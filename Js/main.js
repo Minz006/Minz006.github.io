@@ -64,3 +64,23 @@ showInfoAlert('tunggu sebentar...');
 
 //mengatur tanggal 
 document.getElementById('TGL').valueAsDate = new Date();
+
+
+//animasi skroll
+var atribut = document.querySelectorAll('div');
+atribut.forEach((kelas) => {
+  kelas.setAttribute('class', 'content');
+});
+document.addEventListener('DOMContentLoaded', () => {
+  let pengamat = new IntersectionObserver((entri) => {
+    entri.forEach((item) => {
+      if (item.isIntersecting) {
+        item.target.classList.add('show');
+      } else {
+        item.target.classList.remove('show');
+      }
+    });
+  }, { threshold: 0.5 });
+  let konten = document.querySelectorAll('.content');
+  konten.forEach((el) => pengamat.observe(el));
+});
