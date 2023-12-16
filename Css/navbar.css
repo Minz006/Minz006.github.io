@@ -137,3 +137,15 @@ footer {
     display: none;
   }
 }
+
+/* animasi skroll (js) */
+.content {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s
+}
+
+.content.show {
+  opacity: 1;
+  transform: translateY(0);
+  }
