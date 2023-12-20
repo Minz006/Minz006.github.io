@@ -63,7 +63,12 @@ showInfoAlert('tunggu sebentar...');
 }
 
 //mengatur tanggal 
-document.getElementById('TGL').valueAsDate = new Date();
+var today = new Date();
+var day = today.getDate();
+var month = today.getMonth() + 1; // Bulan dimulai dari 0, sehingga tambahkan 1
+var formattedDate = (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+
+document.getElementById('TGL').value = formattedDate;
 
 
 //animasi skroll
