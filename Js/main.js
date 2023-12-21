@@ -66,9 +66,16 @@ showInfoAlert('tunggu sebentar...');
 var today = new Date();
 var day = today.getDate();
 var month = today.getMonth() + 1; // Bulan dimulai dari 0, sehingga tambahkan 1
-var formattedDate = (month < 10 ? '0' : '') + month + '-' + (day < 10 ? '0' : '') + day;
+
+// Pastikan nilai bulan dan hari selalu dua digit
+var formattedMonth = (month < 10 ? '0' : '') + month;
+var formattedDay = (day < 10 ? '0' : '') + day;
+
+// Format tanggal sesuai dengan standar ISO (YYYY-MM-DD)
+var formattedDate = today.getFullYear() + '-' + formattedMonth + '-' + formattedDay;
 
 document.getElementById('TGL').value = formattedDate;
+
 
 
 //animasi skroll
