@@ -72,7 +72,7 @@ var formattedMonth = (month < 10 ? '0' : '') + month;
 var formattedDay = (day < 10 ? '0' : '') + day;
 
 // Format tanggal sesuai dengan standar ISO (YYYY-MM-DD)
-var formattedDate = today.getFullYear() + '-' + formattedMonth + '-' + formattedDay;
+var formattedDate = formattedMonth + '-' + formattedDay;
 
 document.getElementById('TGL').value = formattedDate;
 
